@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../redux/actions/actions';
+import NavBarComponent from './NavBarComponent';
 
 function AddProducts() {
     const [product, setProduct] = useState({
@@ -43,6 +44,7 @@ function AddProducts() {
     return (
         < >
         {/* <Button onClick={()=>{clearLocalStorage()}}>Clear</Button> */}
+        <NavBarComponent/>
             <Container >
                 <Box sx={{ width: 500, marginTop: 10, marginLeft: 40 }}>
                     <Card >

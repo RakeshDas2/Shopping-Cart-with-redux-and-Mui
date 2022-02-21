@@ -5,6 +5,7 @@ import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp
 import RemoveCircleOutlineSharpIcon from '@mui/icons-material/RemoveCircleOutlineSharp';
 import { changeQty, deleteFromCart } from '../redux/actions/actions';
 import DeleteIcon from '@mui/icons-material/Delete';
+import NavBarComponent from './NavBarComponent';
 function Cart() {
   const recivedData = useSelector(state => state.cartProductsReducer)
   console.log(recivedData);
@@ -56,8 +57,9 @@ function Cart() {
   }
   return (
     <>
+    <NavBarComponent/>
       <Container>
-        <Grid container >
+        <Grid container rowSpacing={1} >
           <Grid item sx={12} >
             {recivedData.list && recivedData.list.map((ele, index) => {
               return <Card key={index}>

@@ -4,6 +4,7 @@ import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart,deleteProductFromProducts } from '../redux/actions/actions';
+import NavBarComponent from './NavBarComponent';
 
 
 function Products() {
@@ -23,6 +24,7 @@ dispatch(addProductToCart(data))
    
     return (
         <>
+        <NavBarComponent/>
             <Container>
                 <Grid container spacing={3} >
                     {recivedData.list && recivedData.list.map((ele, index) => {
@@ -41,7 +43,7 @@ dispatch(addProductToCart(data))
                                     </CardActionArea>
                                     <CardActions>
                                     <Fab variant="extended" color='secondary' onClick={()=>{addToCartElement(ele)}}><Typography variant='caption'>Add to cart</Typography></Fab>
-                                    {/* <Fab color='error' onClick={()=>{deleteProduct(index)}}><DeleteForeverRoundedIcon/></Fab> */}
+                                    <Fab color='error' onClick={()=>{deleteProduct(index)}}><DeleteForeverRoundedIcon/></Fab>
                                     </CardActions>
                             </Card>
                         </Grid>
