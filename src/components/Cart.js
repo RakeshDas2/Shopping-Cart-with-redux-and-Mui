@@ -60,22 +60,27 @@ function Cart() {
     <NavBarComponent/>
       <Container>
         <Grid container rowSpacing={1} >
-          <Grid item sx={12} >
+          <Grid item xs={12} >
             {recivedData.list && recivedData.list.map((ele, index) => {
-              return <Card key={index}>
+              return <Card key={index} style={{width:'60%'}}>
                 <CardActionArea>
                   <CardContent>
-                    <Grid container spacing={4}>
-                      <Grid item sx={3}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={1}>
                         <Avatar src={ele.itemImage} />
                       </Grid>
-                      <Grid item sx={6}>
-                        <Typography>{ele.itemName}</Typography>
-                        <Typography>{ele.itemPrice}</Typography>
+                      <Grid item xs={7}>
+                        <div style={{display:'flex'}}>
+                        <Typography style={{marginLeft:'20px',marginTop:'6px'}}>{ele.itemName}- </Typography>
+                      <Typography variant='h6' style={{marginLeft:'20px'}}>{ele.itemPrice*ele.itemQty}</Typography>
+                        </div>
+                        
                       </Grid>
-                      <Grid item sx={3}>
-                        <AddCircleOutlineSharpIcon onClick={() => { incrementQty(ele.itemQty,index) }} />{ele.itemQty}<RemoveCircleOutlineSharpIcon onClick={() => { decrementQty(ele.itemQty,index) }} /> <br/>
+                      <Grid item xs={4}>
+                       <div style={{display:'flex',border:'2px solid blue',width:'90px'}} >
+                       <AddCircleOutlineSharpIcon onClick={() => { incrementQty(ele.itemQty,index) }} /><Typography >{ele.itemQty}</Typography><RemoveCircleOutlineSharpIcon onClick={() => { decrementQty(ele.itemQty,index) }} /> <br/>
                         <DeleteIcon onClick={()=>{deleteData(index)}}/>
+                       </div>
                       </Grid>
                     </Grid>
                   </CardContent>
