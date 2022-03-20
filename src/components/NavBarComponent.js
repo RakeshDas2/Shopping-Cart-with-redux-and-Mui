@@ -2,7 +2,7 @@ import { AppBar, Badge, Button, Container, IconButton, styled, Toolbar, Typograp
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';    
 import { useSelector } from 'react-redux';
 
 

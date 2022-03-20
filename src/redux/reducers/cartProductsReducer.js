@@ -28,8 +28,6 @@ const cartProductsReducer =(state=initialState,action)=>{
             case CHANGE_QTY :
                 const newArray=[...state.list]
                 console.log(newArray);
-               
-               
                  newArray[action.payload.index].itemQty=action.payload.qty
                    console.log(newArray[action.payload.index]);
                 const data1=JSON.stringify(newArray)
